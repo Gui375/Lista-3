@@ -1,0 +1,36 @@
+Questão 1:
+Em sala no início da disciplina criamos e comentamos que nossa API estava com muitas responsabilidades( regras de negócio , validações, persistência) , 
+ferindo assim qual princípio? Descreva o princípio e o que a partir de então começamos a fazer para corrigir isso?
+
+Respostas: Violando o principio da responsabilidade Unica, com uma API, com varias responsabilidades, a divisão de trabalho ficaria muito bagunçada. Com o método MVC, as responsabilidades ficam 
+mais segregadas, ou seja, mais facil de ser corrigido caso dê problema em algo
+
+Questão 2:
+Começamos a dividir nosso projeto em camadas , são elas:
+Domain, Data, Applicaion e API. Descreva qual o papel de cada uma delas.
+
+Resposta : Domain: Esta é a camada mais interna e central do seu sistema. Ela lida com a representação das regras de negócio e conceitos específicos do domínio da sua aplicação.
+		   Define classes de entidade que representam os objetos centrais do seu domínio, como Cliente, Produto, Pedido, etc.
+
+		   Data:Esta camada é responsável por lidar com o acesso e a manipulação de dados, como bancos de dados, arquivos ou qualquer outro mecanismo de armazenamento.
+		   Contém as classes ou componentes que fazem a interação com a camada de persistência, como repositórios, mapeamento objeto-relacional (ORM), ou consultas SQL.
+
+		   Application:  Essa camada atua como um intermediário entre a camada de domínio e a camada de API, orquestrando as operações e fornecendo serviços para os clientes da API.
+		   Coordena a lógica de negócios, fazendo chamadas à camada de domínio para realizar operações específicas.
+
+		   API:Esta é a camada mais externa e é a interface com o mundo exterior, incluindo outros sistemas, aplicativos de cliente, interfaces web, etc.
+		   Define os pontos de entrada da aplicação, como endpoints HTTP em uma API web, endpoints de serviço em uma API REST, ou métodos de interface em uma aplicação desktop.
+
+
+Questão 3:
+Na camada de Domain criamos classes cujas propriedades são com set privado. Descreva, vantagem de usar dessa forma destacando como fizemos em sala com o produto.
+
+Resposta : Está tecnica tem como função: Controle de acessos, Validação de regras de negocio, Proteção contra Modificações 
+
+
+Questão 4:
+Na camada de applicattion na classe service (de serviço) fizemos o que chamamos de injeção de dependência, descreva por que utilizamos essa técnica e como isso pode ser uma vantagem?
+Resposta : A injeção de dependência permite que você separe a criação e a gestão de dependências externas das classes de serviço.
+Em vez de as classes de serviço criarem ou saberem como criar suas próprias dependências, as dependências são injetadas nelas a partir do exterior.
+Isso reduz o acoplamento entre as classes, o que torna o código mais flexível e fácil de manter.
+
